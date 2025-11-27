@@ -1,12 +1,20 @@
 package com.excelr.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 public class Car {
 		private String modelName;
 		private String mfgName;
 		private double price;
 		private String color;
 		
+		@Autowired			//ByType
+		@Qualifier("e1")
 		Engine engine;		//HAS-A  Dependency
+		
+		@Autowired			//ByType
+		@Qualifier("g1")
 		Gear gear;			//HAS-A  Dependency
 		
 		public Car() {}

@@ -3,6 +3,9 @@ package com.excelr.model;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Player //implements InitializingBean,DisposableBean
 {
 		private int jno;

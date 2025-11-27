@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xmlns:context="http://www.springframework.org/schema/context"
@@ -72,7 +72,7 @@
       	<constructor-arg value="White"> </constructor-arg>
       </bean>
       
-       <bean id="p1" class="com.excelr.model.Player"> <!-- init-method="abc" destroy-method="xyz"> -->
+       <bean id="p1" class="com.excelr.model.Player"> init-method="abc" destroy-method="xyz">
       	<constructor-arg value="18"> </constructor-arg>
       	<constructor-arg value="Virat"> </constructor-arg>
       	<constructor-arg value="100"> </constructor-arg>
@@ -80,3 +80,4 @@
       </bean>
     
 </beans>
+ -->
