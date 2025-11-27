@@ -13,6 +13,7 @@ public class Engine {
 		this.engineLiter = engineLiter;
 		this.engineType = engineType;
 		this.engineMfg = engineMfg;
+		System.out.println("All Args constructor of Engine called");
 	}
 	public int getEngineCC() {
 		return engineCC;
