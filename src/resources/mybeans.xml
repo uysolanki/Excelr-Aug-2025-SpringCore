@@ -7,7 +7,9 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
     
-    <bean id="e1" name="engine" class="com.excelr.model.Engine" scope="prototype" >
+    <context:annotation-config />
+    
+    <bean id="e1" class="com.excelr.model.Engine" scope="prototype" >
     	<constructor-arg value="2500"></constructor-arg>
     	<constructor-arg value="25"></constructor-arg>
    		<constructor-arg value="Petrol"></constructor-arg>
@@ -33,7 +35,7 @@
     	</property>
     </bean>
   
-    <bean id="g1" name="gear" class="com.excelr.model.Gear">
+    <bean id="g1" class="com.excelr.model.Gear">
     	<constructor-arg value="8"></constructor-arg>
     	<constructor-arg value="Automatic"></constructor-arg>
    		<constructor-arg value="Tata"></constructor-arg>
@@ -68,6 +70,13 @@
       	<constructor-arg value="Toyota"> </constructor-arg>
       	<constructor-arg value="100.0"> </constructor-arg>
       	<constructor-arg value="White"> </constructor-arg>
+      </bean>
+      
+       <bean id="p1" class="com.excelr.model.Player"> <!-- init-method="abc" destroy-method="xyz"> -->
+      	<constructor-arg value="18"> </constructor-arg>
+      	<constructor-arg value="Virat"> </constructor-arg>
+      	<constructor-arg value="100"> </constructor-arg>
+      	<constructor-arg value="5000"> </constructor-arg>
       </bean>
     
 </beans>
