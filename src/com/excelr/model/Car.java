@@ -20,6 +20,13 @@ public class Car {
 			this.engine = engine;
 			this.gear = gear;
 		}
+		
+		public Car(String modelName, String mfgName, double price, String color) {
+			this.modelName = modelName;
+			this.mfgName = mfgName;
+			this.price = price;
+			this.color = color;
+		}
 
 		public String getModelName() {
 			return modelName;
