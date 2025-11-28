@@ -17,6 +17,9 @@ public class Car {
 		@Qualifier("g1")
 		Gear gear;			//HAS-A  Dependency
 		
+		@Autowired
+		MusicSystem musicSystem;
+		
 		public Car() {}
 		
 		//Constructor Dependency Injection CDI
@@ -89,8 +92,10 @@ public class Car {
 		@Override
 		public String toString() {
 			return "Car [modelName=" + modelName + ", mfgName=" + mfgName + ", price=" + price + ", color=" + color
-					+ ", engine=" + engine + ", gear=" + gear + "]";
+					+ ", engine=" + engine + ", gear=" + gear + ", musicSystem=" + musicSystem + "]";
 		}
+
+		
 		
 		
 		

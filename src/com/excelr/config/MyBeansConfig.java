@@ -4,12 +4,14 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
 
 import com.excelr.model.Car;
 import com.excelr.model.Engine;
 import com.excelr.model.Gear;
+import com.excelr.model.MusicSystem;
 
 @Configuration
 @ComponentScan(basePackages = "com.excelr.model")
@@ -67,5 +69,25 @@ public class MyBeansConfig {
 	      @Value("${car.color}") String color) {
 
 	    return new Car(name, mfg, price, color);
+	}
+	
+	
+	@Bean(name = "ms1")
+	@Scope("prototype")
+	@Primary
+	public MusicSystem getMusicSystemByCDI()
+	{
+		return new MusicSystem("Rockers","Boat",100.0);
+	}
+	
+	@Bean(name = "ms2")
+	@Scope("prototype")
+	public MusicSystem getMusicSystemBySDI()
+	{
+		MusicSystem musicSystem=new MusicSystem();
+		musicSystem.setMfgName("JBL");
+		musicSystem.setModelName("Tom");
+		musicSystem.setPrice(200.0);
+		return musicSystem;
 	}
 }
