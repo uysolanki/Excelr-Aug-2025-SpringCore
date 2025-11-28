@@ -1,8 +1,10 @@
 package com.excelr.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
 
 import com.excelr.model.Car;
@@ -11,6 +13,7 @@ import com.excelr.model.Gear;
 
 @Configuration
 @ComponentScan(basePackages = "com.excelr.model")
+@PropertySource("classpath:resources/application.properties")
 public class MyBeansConfig {
 
 	@Bean(name = "e1")
@@ -54,5 +57,15 @@ public class MyBeansConfig {
 	{
 		Car car=new Car("Fortuner","Toyota",1200.0,"Black");
 		return car;
+	}
+	
+	@Bean
+	public Car getCarFromProperties(
+	      @Value("${car.name}") String name,
+	      @Value("${car.mfg}") String mfg,
+	      @Value("${car.price}") double price,
+	      @Value("${car.color}") String color) {
+
+	    return new Car(name, mfg, price, color);
 	}
 }

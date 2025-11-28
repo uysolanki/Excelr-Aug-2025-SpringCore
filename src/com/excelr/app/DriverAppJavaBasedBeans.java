@@ -28,8 +28,12 @@ public class DriverAppJavaBasedBeans {
 //		Car car1=beanFactory.getBean("c1",Car.class);
 //		System.out.println(car1);
 		
-		Player player1=beanFactory.getBean(Player.class);
-		System.out.println(player1);
+//		Player player1=beanFactory.getBean(Player.class);
+//		System.out.println(player1);
+		
+		
+		Car car1=beanFactory.getBean("getCarFromProperties",Car.class);
+		System.out.println(car1);
 	}
 
 }
