@@ -18,7 +18,7 @@ import com.excelr.model.MusicSystem;
 @PropertySource("classpath:resources/application.properties")
 public class MyBeansConfig {
 
-	@Bean(name = "e1")
+	@Bean(name = "e1",initMethod = "myinit", destroyMethod = "mydestroy")
 	@Scope("prototype")
 	public Engine getEngineByCDI()
 	{
